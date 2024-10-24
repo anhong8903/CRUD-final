@@ -14,8 +14,9 @@ update.addEventListener('click', _ => {
         headers: { 'Content-Type': 'application/json' },
         
         body: JSON.stringify({
-            name: 'Darth Vadar',
-            quote: 'I find your lack of faith disturbing.'
+            ID: '11',
+            name: 'Hotwheels 73 Honda Civic Custom',
+            price: '123000'
         })
     })
     .then(res => {
@@ -35,7 +36,7 @@ deleteButton.addEventListener('click', _ => {
         method: 'delete',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            name: 'Darth Vadar'
+            name: 'Hotwheels 73 Honda Civic Custom'
         })
     })
     .then(res => {

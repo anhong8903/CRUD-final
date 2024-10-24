@@ -1,57 +1,124 @@
 <!-- index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Star Wars Quote App</title>
-    </head>
 
-    <body>
-        <h1>CREATE: May Node and Express be with you.</h1>
-        
-        <!-- (1): CREATE Task -->         
-        <!-- --> 
-        <form action="/quotes" method="POST">   
-            <input type="text" placeholder="name" name="name" />        
-            <input type="text" placeholder="quote" name="quote" />
-            <button type="submit">Submit</button>
-        </form>
-        <!-- -->                               
+<head>
+    <meta charset="UTF-8" />
+    <title>Hong Quoc An Web</title>
 
-        <!-- (2) READ Task -->                        
-        <h2> READ: All Quotes in Database </h2>
-        <ul class="quotes">
-            <!-- Loop through quotes -->
-            <% for(var i = 0; i < quotes.length; i++) {%>
-                <li class="quote">
-                    <!-- Output name from the iterated quote object -->
-                    <span><%= quotes[i].name %></span>:
-                    <!-- Output quote from the iterated quote object -->
-                    <span><%= quotes[i].quote %></span>
-                </li>
-            <% } %>
-        </ul>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <style>
+        input {
+            display: block;
+            margin-bottom: 15px;
+            width: 200px;
+        }
 
-        <!-- (3) UPDATE Task -->
-        <div>
-            <h2>UPDATE: Darth Vadar invades!</h2>
-            <p>
-            Replace first Yoda's quote with a quote written by Darth Vadar
-            </p>
-            <button id="update-button">Replace Yoda's quote</button>
-        </div>
+        button {
+            margin-top: 10px;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
 
-        <div>
-            <h2>DELETE: Remove Darth Vadar!</h2>
-            <p>
-            Delete one Darth Vadar's quote. Does nothing if there are no more Darth Vadar's quote
-            </p>
-            <button id="delete-button">Delete Darth Vadar's quote</button>
-        </div>
+        .quotes {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-        <!-- ... -->
-        <script src="/main.js"></script>
+        .quote {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .quote:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .quote-id {
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .quote-name {
+            font-style: italic;
+            color: #28A745;
+            margin-left: 10px;
+        }
+
+        .quote-price {
+            font-weight: bold;
+            color: #DC3545;
+            margin-left: 10px;
+        }
+
+ 
+    </style>
+</head>
+
+<body>
+    <h1>An Toy Store</h1>
+    <h3>Adding new items</h3>
+    <!-- (1): CREATE Task -->
+    <!-- -->
+    <form action="/quotes" method="POST">
+        <input type="text" placeholder="ID" name="ID" />
+        <input type="text" placeholder="Name" name="name" />
+        <input type="text" placeholder="Price" name="price" /></br>
+        <button type="submit">Submit</button>
+    </form>
+    <!-- -->
+
+    <!-- (2) READ Task -->
+    <h2> List Toys :</h2>
+    <ul class="quotes">
+        <!-- Loop through quotes -->
+        <% for(var i=0; i < quotes.length; i++) {%>
+            <li class="quote">
+                <span>
+                    <%= quotes[i].ID %>
+                </span>/
+                <span>
+                    <%= quotes[i].name %>
+                </span> :
+                <!-- Output quote from the iterated quote object -->
+                $<span>
+                    <%= quotes[i].price %>
+                </span>
+                
+            </li>
+        <% } %>
+    </ul>
+
+    <!-- (3) UPDATE Task -->
+    <div>
+        <h2>Update List Toys</h2>
     
-    </body>
+        <button id="update-button">Update</button>
+    </div>
+
+    <div>
+        <h2>Remove Items </h2>
+        
+        <button id="delete-button">Remove</button>
+    </div>
+
+    <!-- ... -->
+    <script src="/main.js"></script>
+
+</body>
 
 </html>

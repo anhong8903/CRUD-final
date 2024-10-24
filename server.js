@@ -73,8 +73,9 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
                 {
                     // If name 'Yoda' exists, change Yoda’s quotes into Darth Vadar’s quotes
                     $set: {
+                        ID: req.body.ID,
                         name: req.body.name,
-                        quote: req.body.quote
+                        price: req.body.price
                     }
                 },
                 {
