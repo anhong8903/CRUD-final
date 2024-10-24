@@ -64,13 +64,35 @@
             color: #DC3545;
             margin-left: 10px;
         }
-
- 
+        #credit {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px;
+    color: gray;
+}
+.creator-info {
+        position: fixed; /* Giữ cố định */
+        bottom: 10px; /* Cách đáy 10px */
+        right: 10px; /* Cách phải 10px */
+        background-color: rgba(0, 0, 0, 0.7); /* Màu nền đen trong suốt */
+        color: white; /* Màu chữ trắng */
+        padding: 5px 10px;
+        border-radius: 5px; /* Bo góc */
+        font-family: 'Arial', sans-serif;
+        font-size: 12px;
+        z-index: 1000; /* Luôn nằm trên các phần tử khác */
+    }
     </style>
 </head>
 
 <body>
-    <h1>An Toy Store</h1>
+    <div class="creator-info">
+        <p>Hồng Quốc An</p>
+        <p>GCS210868</p>
+        <p>GCS1101</p>
+    </div>    
+    <h1>An's Toy Store</h1>
     <h3>Adding new items</h3>
     <!-- (1): CREATE Task -->
     <!-- -->
